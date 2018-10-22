@@ -1,0 +1,26 @@
+
+<div class="container cont-lista-recetas">
+  <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="card-columns">
+            <div class="card animated fadeIn fast" *ngFor="let receta of recetas">
+                <img class="card-img-top img-fluid" [src]="receta.thumbnail" [alt]="receta.title">
+                <div class="card-body">
+                  <h4 class="card-title">{{receta.title}}</h4>
+                  <a href="{{receta.href}}">Ver Receta</a>
+                  <p class="card-text"> {{ receta.bio }} </p>
+                  <p class="card-text"><small class="text-muted">Ingredientes: </small></p>
+                  <p class="card-text">{{receta.ingredients}}</p>
+                  <!-- <button (click)="verHeroe()"
+                    type="button" class="btn btn-outline-primary btn-block">
+                    Ver más...
+                  </button> -->
+                  <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver más link...</a> -->
+              
+                </div>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+</div>
