@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, Headers } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -74,17 +74,17 @@ export class RecetasService {
    }
   
   getRecetasURl(){
-    this.http.get('http://www.recipepuppy.com/api/').subscribe( receta => {
-      for( let i = 0; i < receta.results.length; i++ ){
-        let recetas: {};
-        recetas = receta.results[i];
-        console.log(receta.results[i])
-        this.RecetasToUrl.push(recetas);
+    this.http.get('http://www.recipepuppy.com/api/').subscribe( recetas => {
+      
+      let recetasTodas:any[];
+      recetasTodas = recetas.results;
+      for( let i:number = 0; i < recetasTodas.length; i++ ){
+        this.RecetasToUrl.push(recetasTodas[i]);
       }
     } );
-  }
+  } 
 
-  getRecetas() {
+  getRecetas(){
     // let RecetasURL = this.getRecetasURl();
     // console.log(RecetasURL);
     return this.RecetasToUrl;

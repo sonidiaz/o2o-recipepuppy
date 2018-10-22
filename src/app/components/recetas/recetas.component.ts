@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, Headers } from '@angular/common/http';
-import { RecetasService } from '../../servicios/recetas.service';
+import { HttpClient } from '@angular/common/http';
+import { RecetasService, Recetas } from '../../servicios/recetas.service';
 
 
 @Component({
