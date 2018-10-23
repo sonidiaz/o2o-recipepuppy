@@ -23,14 +23,19 @@ export class RecetasService {
     return this.RecetasToUrl;
   }
 
-  buscarRecetas(termino: string){
-    let recetasArr: Recetas[] = [];
+  buscarRecetaLive(termino: string) {
+    const _filter = this.RecetasToUrl.filter( receta => receta.title.indexOf(termino) !== -1 );
+    return _filter;
+  }
+
+  buscarRecetas(termino: string): Recetas[] {
+    const recetasArr: Recetas[] = [];
 
     termino = termino.toLowerCase();
-
-    for( let receta of this.RecetasToUrl ){
-      let nombre = receta.title.toLowerCase();
-      if( nombre.indexOf(termino) >= 0  ){
+    console.log(termino);
+    for ( const receta of this.RecetasToUrl ) {
+      const nombre = receta.title.toLowerCase();
+      if ( nombre.indexOf(termino) >= 0  ) {
         recetasArr.push(receta);
       }
     }

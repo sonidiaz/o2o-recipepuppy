@@ -2,13 +2,13 @@
   <div class="row mx-auto">
     <div class="col-sm-12 offset-sm-0 col-md-6 offset-md-3 mt-3 mb-2 ">
         <div class="form-inline">
-          <div class="col-sm-8 mb-2">
-              <input class="form-control w-input" type="text" placeholder="Buscar Recetas" (keyup.enter)="buscarReceta(buscarTexto.value)" #buscarTexto>
+          <div class="col-sm-12 mb-12">
+              <input id="buscar-receta" class="form-control w-input" type="text" placeholder="Buscar Recetas" #box (keyup)="onKey($event)" (keyup.enter)="buscarReceta(buscarTexto.value)" #buscarTexto pattern="[A-Za-z]+">
           </div>
-          <div class="col-sm-4 mb-2">
+          <!-- <div class="col-sm-4 mb-2">
               <button (click)="buscarReceta(buscarTexto.value)"
               class="btn btn-primary my-2 my-sm-0 btn-warning btn-block" type="button">Buscar</button>
-          </div>
+          </div> -->
         </div>
     </div>
   </div>
