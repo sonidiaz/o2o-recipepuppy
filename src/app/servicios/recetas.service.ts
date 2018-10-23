@@ -29,15 +29,12 @@ export class RecetasService {
     termino = termino.toLowerCase();
 
     for( let receta of this.RecetasToUrl ){
-
       let nombre = receta.title.toLowerCase();
       if( nombre.indexOf(termino) >= 0  ){
-          recetasArr.push(receta);
+        recetasArr.push(receta);
       }
     }
-   
     return recetasArr;
-
   }
 }
 

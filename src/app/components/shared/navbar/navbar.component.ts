@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { RecetasService } from '../../../servicios/recetas.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,14 +12,14 @@ export class NavbarComponent implements OnInit {
 
   _resetasEncontradas : any[] = [];
   
-  constructor( private resetaServive: RecetasService) {
+  constructor( private resetaService: RecetasService, private router: Router) {
     
    }
 
   ngOnInit() {
   }
   buscarReceta( termino: string ) {
-    this._resetasEncontradas = this.resetaServive.buscarRecetas(termino);
-    console.log(this._resetasEncontradas);
+   // this._resetasEncontradas = this.resetaService.buscarRecetas(termino);
+   this.router.navigate(['/buscar', termino]);
   }
 }
