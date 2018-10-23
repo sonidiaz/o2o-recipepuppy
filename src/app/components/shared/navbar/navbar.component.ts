@@ -11,5 +11,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  buscarReceta( termino: string ) {
+    // this.router.navigate( ['/buscar',termino] );
+    console.log('Buscando recetas');
+  }
 }
