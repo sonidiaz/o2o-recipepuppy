@@ -9,7 +9,7 @@ import { RecetasService, Recetas } from '../../servicios/recetas.service';
 })
 export class RecetasComponent implements OnInit {
 
-  recetas: Recetas[] = []; 
+  recetas: Recetas[] = [];
   constructor( private recetasService: RecetasService, private http: HttpClient ) {
     // this.http.get('http://www.recipepuppy.com/api/').subscribe( receta => console.log(receta) );
   }

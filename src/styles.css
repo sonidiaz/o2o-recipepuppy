@@ -2,3 +2,6 @@
 .cont-lista-recetas{
     margin-top:15px
 }
+.w-input{
+    width: 100% !important;
+}
